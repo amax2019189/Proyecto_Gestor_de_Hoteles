@@ -1,16 +1,12 @@
 import { ObjectId } from "mongodb";
 import mongoose, {Schema} from "mongoose";
 
-const availabilityType = {
-    values: ['available', 'not available']
-}
-
-const RoomSchema = mongoose.Schema({
-    roomName: {
+const EventSchema = mongoose.Schema({
+    eventName: {
         type: String,
         required: true
     },
-    roomNumber: {
+    eventNumber: {
         type: String,
         required: true
     },
@@ -20,9 +16,8 @@ const RoomSchema = mongoose.Schema({
         required: true
     },
     availability: {
-        type: String,
-        enum: availabilityType,
-        required: true,
+        type: Boolean,
+        required: true
     },
     type: {
         type: String,
@@ -44,13 +39,18 @@ const RoomSchema = mongoose.Schema({
             type: Date,
             required: true
         }, 
-    }]
+    }],
+    state: {
+        type: String,
+        required: true,
+        default: true
+    }
 });
 
-RoomsSchema.methods.toJSON = function(){
-    const { __v, _id, ...rooms} = this.toObject();
-    rooms.uid = _id;
-    return rooms;
+EventSchema.methods.toJSON = function(){
+    const { __v, _id, ...events} = this.toObject();
+    events.uid = _id;
+    return events;
 }
 
-export default mongoose.model("Room", RoomSchema);
+export default mongoose.model("Event", EventSchema);
