@@ -1,0 +1,45 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Hotels",
+    "collectionId": "bea47a21-5d05-43d4-ba4e-2abb3a719029",
+    "dateExported": "2024-05-03T14:43:39.975Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "5a2c3def-76bc-41aa-81be-7fefc3324b00",
+            "colId": "bea47a21-5d05-43d4-ba4e-2abb3a719029",
+            "containerId": "",
+            "name": "Register",
+            "url": "http://localhost:8080/hotelManagerApi/v1/auth/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-05-03T14:27:39.733Z",
+            "modified": "2024-05-03T14:32:57.209Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"smaeda\",\n  \"email\": \"smaeda@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "883394c3-cdbe-4017-9219-8a4d6a6c764c",
+            "colId": "bea47a21-5d05-43d4-ba4e-2abb3a719029",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://localhost:8080/hotelManagerApi/v1/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-03T14:34:46.282Z",
+            "modified": "2024-05-03T14:37:12.371Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"smaeda@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "687iUczlLuf1EFesr-nlp-bhawEs4z1P7-uXp_iA10bC0FebY0UDAYG4JlBbNkRr_6Dh5lz3_FqTTudQTwgwZg"
+}
