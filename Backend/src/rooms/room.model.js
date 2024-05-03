@@ -1,10 +1,6 @@
 import { ObjectId } from "mongodb";
 import mongoose, {Schema} from "mongoose";
 
-const availabilityType = {
-    values: ['available', 'not available']
-}
-
 const RoomSchema = mongoose.Schema({
     roomName: {
         type: String,
@@ -20,9 +16,8 @@ const RoomSchema = mongoose.Schema({
         required: true
     },
     availability: {
-        type: String,
-        enum: availabilityType,
-        required: true,
+        type: Boolean,
+        required: true
     },
     type: {
         type: String,
@@ -44,7 +39,12 @@ const RoomSchema = mongoose.Schema({
             type: Date,
             required: true
         }, 
-    }]
+    }],
+    state: {
+        type: String,
+        required: true,
+        default: true
+    }
 });
 
 RoomsSchema.methods.toJSON = function(){
