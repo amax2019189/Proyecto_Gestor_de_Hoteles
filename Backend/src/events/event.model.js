@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 import { ObjectId } from "mongodb";
-=======
->>>>>>> main
-import mongoose, {Schema} from "mongoose";
+
+import mongoose, { Schema } from "mongoose";
 
 const EventSchema = mongoose.Schema({
     eventName: {
@@ -14,11 +12,7 @@ const EventSchema = mongoose.Schema({
         required: true
     },
     hotel: {
-<<<<<<< HEAD
-        type: Schema.Types,ObjectId,
-=======
         type: Schema.Types.ObjectId,
->>>>>>> main
         ref: 'Hotel',
         required: true
     },
@@ -45,7 +39,7 @@ const EventSchema = mongoose.Schema({
         dateEnd: {
             type: Date,
             required: true
-        }, 
+        },
     }],
     state: {
         type: String,
@@ -54,8 +48,8 @@ const EventSchema = mongoose.Schema({
     }
 });
 
-EventSchema.methods.toJSON = function(){
-    const { __v, _id, ...events} = this.toObject();
+EventSchema.methods.toJSON = function () {
+    const { __v, _id, ...events } = this.toObject();
     events.uid = _id;
     return events;
 }

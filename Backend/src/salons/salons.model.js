@@ -21,4 +21,4 @@ SalonsSchema.methods.toJSON = function(){
     return salons;
 }
 
-export default mongoose.model('Salons', SalonsSchema)
+export default mongoose.model('Salons', SalonsSchema);
