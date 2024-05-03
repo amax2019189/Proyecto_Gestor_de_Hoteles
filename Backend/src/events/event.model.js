@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { ObjectId } from "mongodb";
+=======
+>>>>>>> main
 import mongoose, {Schema} from "mongoose";
 
 const EventSchema = mongoose.Schema({
@@ -11,7 +14,11 @@ const EventSchema = mongoose.Schema({
         required: true
     },
     hotel: {
+<<<<<<< HEAD
         type: Schema.Types,ObjectId,
+=======
+        type: Schema.Types.ObjectId,
+>>>>>>> main
         ref: 'Hotel',
         required: true
     },
