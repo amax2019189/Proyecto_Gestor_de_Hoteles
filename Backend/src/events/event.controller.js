@@ -39,8 +39,8 @@ export const eventPost = async (req, res) => {
 
 export const getEvents = async (req, res) => {
     try {
-      const rooms = await Room.find();
-      res.status(200).json(rooms);
+      const events = await Events.find();
+      res.status(200).json(events);
     } catch (error) {
       console.error("ERROR: when obtaining events ", error);
       res.status(500).json({ error: "ERROR: internal server" });
@@ -64,7 +64,7 @@ export const getEvents = async (req, res) => {
       }
   
       await Events.findByIdAndUpdate(id, resto);
-      const events = await event.findOne({ _id: id });
+      const Events = await event.findOne({ _id: id });
 
       res.status(200).json({ msg: "Event successfully updated", event });
 
@@ -84,7 +84,7 @@ export const getEvents = async (req, res) => {
         return res.status(404).json({ msg: "Event not found" });
       }
   
-      res.status(200).json({ msg: "Room successfully eliminated" });
+      res.status(200).json({ msg: "Event successfully eliminated" });
     } catch (error) {
       console.error("Error deleting event: ", error);
       res.status(400).json({ error: error.message });
