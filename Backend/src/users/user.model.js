@@ -3,18 +3,16 @@ import mongoose, {Schema} from "mongoose"
 const UserSchema = mongoose.Schema({
     email: {
         type: String,
-        unique: true,
-        require: [true, "The email is necessary"],
+        unique: true
     },
-    username: {
-        trype: String,
-        require: [true, "The username is necessary"],
+    username:{
+        type: String
     },
-    password: {
-        type: String,
-        require: [true, "The password is necessary"],
-    }
+    password:{
+        type: String
+    },
 })
+
 
 UserSchema.methods.toJSON = function(){
     const { __v, password, _id, ...user} = this.toObject();

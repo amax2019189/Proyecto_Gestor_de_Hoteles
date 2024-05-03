@@ -1,6 +1,10 @@
 import { ObjectId } from "mongodb";
 import mongoose, {Schema} from "mongoose";
 
+const availabilityType = {
+    values: ['available', 'not available']
+}
+
 const RoomSchema = mongoose.Schema({
     roomName: {
         type: String,
@@ -11,13 +15,14 @@ const RoomSchema = mongoose.Schema({
         required: true
     },
     hotel: {
-        type: Schema.Types,ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Hotel',
         required: true
     },
     availability: {
-        type: Boolean,
-        required: true
+        type: String,
+        enum: availabilityType,
+        required: true,
     },
     type: {
         type: String,
@@ -39,15 +44,10 @@ const RoomSchema = mongoose.Schema({
             type: Date,
             required: true
         }, 
-    }],
-    state: {
-        type: String,
-        required: true,
-        default: true
-    }
+    }]
 });
 
-RoomsSchema.methods.toJSON = function(){
+RoomSchema.methods.toJSON = function(){
     const { __v, _id, ...rooms} = this.toObject();
     rooms.uid = _id;
     return rooms;

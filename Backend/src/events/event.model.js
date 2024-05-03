@@ -1,4 +1,3 @@
-import { ObjectId } from "mongodb";
 import mongoose, {Schema} from "mongoose";
 
 const EventSchema = mongoose.Schema({
@@ -11,7 +10,7 @@ const EventSchema = mongoose.Schema({
         required: true
     },
     hotel: {
-        type: Schema.Types,ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'Hotel',
         required: true
     },

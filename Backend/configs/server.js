@@ -5,13 +5,20 @@ import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import { dbConnection } from './mongo.js'
-import salonsRoutes from '../src/salons/salons.routes.js';
+import roomsRouter from '../src/rooms/room.routes.js'
+import salonsRoutes from '../src/salons/salons.routes.js'
+import authRoutes from '../src/auth/auth.routes.js'
+import eventRoutes from '../src/events/event.routes.js'
+
 
 class Server{
     constructor(){
         this.app = express()
         this.port = process.env.PORT
+        this.roomsPath = '/hotelManagerApi/v1/rooms'
         this.salonsPath = '/hotelManagerApi/v1/salons'
+        this.authPath = '/hotelManagerApi/v1/auth'
+        this.eventPath = '/hotelManagerApi/v1/event'
         
         this.middleware()
         this.conectarDB()
@@ -31,7 +38,10 @@ class Server{
     }
 
     routes(){
-        this.app.use(this.salonsPath, salonsRoutes);
+        this.app.use(this.roomsPath, roomsRouter)
+        this.app.use(this.salonsPath, salonsRoutes)
+        this.app.use(this.authPath, authRoutes)
+        this.app.use(this.eventPath, eventRoutes)
     }
 
     listen(){
