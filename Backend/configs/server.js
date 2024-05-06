@@ -9,6 +9,7 @@ import roomsRouter from '../src/rooms/room.routes.js'
 import salonsRoutes from '../src/salons/salons.routes.js'
 import authRoutes from '../src/auth/auth.routes.js'
 import eventRoutes from '../src/events/event.routes.js'
+import hotelsRoutes from '../src/hotels/hotels.routes.js'
 
 
 class Server{
@@ -19,6 +20,7 @@ class Server{
         this.salonsPath = '/hotelManagerApi/v1/salons'
         this.authPath = '/hotelManagerApi/v1/auth'
         this.eventPath = '/hotelManagerApi/v1/event'
+        this.hotelPath = '/hotelManagerApi/v1/hotel'
         
         this.middleware()
         this.conectarDB()
@@ -42,6 +44,8 @@ class Server{
         this.app.use(this.salonsPath, salonsRoutes)
         this.app.use(this.authPath, authRoutes)
         this.app.use(this.eventPath, eventRoutes)
+        this.app.use(this.hotelPath, hotelsRoutes)
+        
     }
 
     listen(){

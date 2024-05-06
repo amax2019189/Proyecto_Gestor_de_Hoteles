@@ -1,4 +1,3 @@
-import bcryptjs from 'bcryptjs';
 import Salons from './salons.model.js';
 
 export const salonsPost = async (req, res) => {
