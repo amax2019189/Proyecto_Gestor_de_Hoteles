@@ -1,0 +1,45 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "kinalitos_hoteles_matutina",
+    "collectionId": "0f672fed-4dff-48cd-8806-46049f27a7a6",
+    "dateExported": "2024-05-06T17:54:43.180Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "1984506a-7bd4-4b65-9549-856a6e73477d",
+            "colId": "0f672fed-4dff-48cd-8806-46049f27a7a6",
+            "containerId": "",
+            "name": "roomsPost",
+            "url": "http://localhost:8080/hotelManagerApi/v1/rooms/createRoom",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-05-06T14:27:03.886Z",
+            "modified": "2024-05-06T17:29:44.536Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"roomName\": \"prueba1\",\n  \"roomNumber\": \"01\",\n  \"hotel\": \"66390c6ed0278377a2520fae\",\n  \"availability\": \"available\",\n  \"type\": \"resourt\",\n  \"capacity\": 50,\n  \"description\": \"resort para 4 personas\",\n  \"dateStart\": \"2022-05-01\",\n  \"dateEnd\": \"2022-05-01\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "55aa5bab-d797-4268-9d8e-9f38fde4ff17",
+            "colId": "0f672fed-4dff-48cd-8806-46049f27a7a6",
+            "containerId": "",
+            "name": "hotelsPost",
+            "url": "http://localhost:8080/hotelManagerApi/v1/hotel",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-06T16:54:18.511Z",
+            "modified": "2024-05-06T17:51:11.521Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"prueba1\",\n  \"quantityRooms\": 200,\n  \"location\": \"ciudad quiche2\",\n  \"owner\": \"vendedor imagino2\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "lHusH1OMRUIOC1Zmsv-hw0EbB5hnAmEY_geKBklY5ASuZDfGjBbh0KCwVj4x_dXjEuBnDMK2WYFQ9vx8meEJdQ"
+}

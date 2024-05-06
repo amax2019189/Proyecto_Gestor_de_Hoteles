@@ -10,6 +10,7 @@ import salonsRoutes from '../src/salons/salons.routes.js'
 import authRoutes from '../src/auth/auth.routes.js'
 import eventRoutes from '../src/events/event.routes.js'
 import hotelsRoutes from '../src/hotels/hotels.routes.js'
+import apiLimiter from '../src/middleware/validar-cant-peticiones.js'
 
 
 class Server{
@@ -37,6 +38,7 @@ class Server{
         this.app.use(express.json())
         this.app.use(helmet())
         this.app.use(morgan('dev'))
+        this.app.use(apiLimiter)
     }
 
     routes(){
