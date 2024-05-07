@@ -46,6 +46,8 @@ export const login = async (req, res) => {
             return res.status(400).send("wrong password");
         }
 
+        console.log(process.env.TOKEN_KEY);
+
         const token = await generarJWT(user.id, user.email);
 
         res.status(200).json({
