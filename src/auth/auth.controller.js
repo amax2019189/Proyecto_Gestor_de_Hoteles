@@ -4,21 +4,23 @@ import { generarJWT } from "../helpers/generate-jwt.js";
 
 export const register = async (req, res) => {
   try {
-    const { email, username, password } = req.body;
+    const { email, username, password, roleUser } = req.body;
     const encryptedPassword = bcryptjs.hashSync(password);
 
     const user = await Users.create({
       username,
       email: email.toLowerCase(),
       password: encryptedPassword,
+      roleUser,
     });
 
     return res.status(200).json({
-      msg: "user has been added to database",
+      msg: "|-- user has been added to database --|",
       userDetails: {
         user: user.username,
         password: user.password,
         email: user.email,
+        roleUser
       },
     });
   } catch (e) {
