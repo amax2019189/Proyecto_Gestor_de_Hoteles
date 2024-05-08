@@ -29,8 +29,8 @@ router.post(
     check("password", "El password debe de ser mayor a 6 caracteres").isLength({
       min: 6,
     }),
+    rolValidate,
     validarCampos,
-    rolValidate
   ],
   register
 );
