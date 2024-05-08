@@ -3,7 +3,7 @@ import { check } from "express-validator";
 import { login, register, AllUsersHotels } from "../auth/auth.controller.js";
 import { validarCampos } from "../middleware/validar-campos.js";
 import { existEmail } from "../helpers/db-validators.js";
-
+import { rolValidate } from "../middleware/users-validations.js"
 const router = Router();
 
 router.post(
@@ -30,6 +30,7 @@ router.post(
       min: 6,
     }),
     validarCampos,
+    rolValidate
   ],
   register
 );
