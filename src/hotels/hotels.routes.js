@@ -7,7 +7,7 @@ import {
 const router = Router();
 
 router.post(
-    "/",
+    "/createHotel",
     [
         check("name", "The name is necessary"),
         check("quantityRooms", "The number of rooms is necessary"),

@@ -16,6 +16,10 @@ const HotelSchema = mongoose.Schema({
     owner: {
         type: String,
         require: [true, "Owner's name is required"],
+    },
+    stateHotel: {
+        type: Boolean,
+        default: true,
     }
 });
 

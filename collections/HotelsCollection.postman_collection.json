@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "f9a55554-380b-4319-ad14-96955d6e6447",
+		"name": "HotelsCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34430314"
+	},
+	"item": [
+		{
+			"name": "AddRooms",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roomName\": \"prueba12\",\r\n    \"roomNumber\": \"021\",\r\n    \"hotel\": \"663affdd49c7948a68aa321e\",\r\n    \"availability\": \"available\",\r\n    \"type\": \"spa\",\r\n    \"capacity\": 10,\r\n    \"description\": \"un hotel pal rato\",\r\n    \"dateStart\": \"2024-08-05\",\r\n    \"dateEnd\": \"2024-08-10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/hotelManagerApi/v1/rooms/createRoom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotelManagerApi",
+						"v1",
+						"rooms",
+						"createRoom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddHotels",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"hotelPenaldo\",\r\n    \"quantityRooms\": 40,\r\n    \"location\": \"españita plaza real\",\r\n    \"owner\": \"penaldo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/hotelManagerApi/v1/hotel/createHotel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotelManagerApi",
+						"v1",
+						"hotel",
+						"createHotel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddSalons",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"prueba1\",\r\n    \"amount\": 10,\r\n    \"eventType\": \"cocina\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/hotelManagerApi/v1/salons/createSalon",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotelManagerApi",
+						"v1",
+						"salons",
+						"createSalon"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

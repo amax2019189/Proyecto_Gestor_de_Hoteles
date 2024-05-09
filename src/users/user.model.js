@@ -1,5 +1,7 @@
 import mongoose, {Schema} from "mongoose"
 
+const rolesUsersHotels = ['admin', 'user', 'hotel'];
+
 const UserSchema = mongoose.Schema({
     email: {
         type: String,
@@ -11,10 +13,14 @@ const UserSchema = mongoose.Schema({
     password:{
         type: String
     },
-    role: {
+    roleUser: {
         type: String,
-        enum: ['ROL_USER', 'ROL_ADMIN'],
-        default: 'ROL_USER'
+        enum: rolesUsersHotels,
+        required: true,
+    },
+    stateUser:{
+        type: Boolean,
+        default: true
     }
 })
 

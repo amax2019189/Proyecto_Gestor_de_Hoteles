@@ -4,9 +4,11 @@ export const hotelsPost = async (req, res) => {
     const {name, quantityRooms, location, owner} = req.body;
     const hotels = new Hotels({name, quantityRooms, location, owner});
     
-    await hotels.save()
+    await hotels.save();
 
     res.status(200).json({
+        msg: "|-- Hotel Agregado --|",
         hotels
     });
-}
+};
+

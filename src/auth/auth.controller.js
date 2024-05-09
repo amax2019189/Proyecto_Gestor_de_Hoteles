@@ -1,64 +1,71 @@
-import bcryptjs from 'bcryptjs';
-import Users from '../users/user.model.js';
+import bcryptjs from "bcryptjs";
+import Users from "../users/user.model.js";
 import { generarJWT } from "../helpers/generate-jwt.js";
 
 export const register = async (req, res) => {
-    try {
-        const { email, username, password } = req.body;
-        const encryptedPassword = bcryptjs.hashSync(password);
+  try {
+    const { email, username, password, roleUser } = req.body;
+    const encryptedPassword = bcryptjs.hashSync(password);
 
-        const user = await Users.create({
-            username,
-            email: email.toLowerCase(),
-            password: encryptedPassword
-        });
+    const user = await Users.create({
+      username,
+      email: email.toLowerCase(),
+      password: encryptedPassword,
+      roleUser,
+    });
 
-        return res.status(200).json({
-            msg: "user has been added to database",
-            userDetails: {
-                user: user.username,
-                password: user.password,
-                email: user.email,
-            },
-        });
-
-    } catch (e) {
-        console.log(e);
-        return res.status(500).send("No se pudo registrar el usuario");
-    }
+    return res.status(200).json({
+      msg: "|-- user has been added to database --|",
+      userDetails: {
+        user: user.username,
+        password: user.password,
+        email: user.email,
+        roleUser
+      },
+    });
+  } catch (e) {
+    console.log(e);
+    return res.status(500).send("No se pudo registrar el usuario");
+  }
 };
 
 export const login = async (req, res) => {
-    try {
-        const { email, password } = req.body;
+  try {
+    const { email, password } = req.body;
 
-        const user = await Users.findOne({ email: email.toLowerCase() });
+    const user = await Users.findOne({ email: email.toLowerCase() });
 
-        if (!user) {
-            return res
-                .status(400)
-                .send(`Wrong credentials, ${email} doesn't exists en database`);
-        }
-
-        const validPassword = bcryptjs.compareSync(password, user.password);
-
-        if (!validPassword) {
-            return res.status(400).send("wrong password");
-        }
-
-        console.log(process.env.TOKEN_KEY);
-
-        const token = await generarJWT(user.id, user.email);
-
-        res.status(200).json({
-            msg: "Login Ok!!!",
-            userDetails: {
-                username: user.username,
-                token: token
-            },
-        });
-
-    } catch (e) {
-        res.status(500).send("Comuniquese con el administrador");
+    if (!user) {
+      return res
+        .status(400)
+        .send(`Wrong credentials, ${email} doesn't exists en database`);
     }
+
+    const validPassword = bcryptjs.compareSync(password, user.password);
+
+    if (!validPassword) {
+      return res.status(400).send("wrong password");
+    }
+
+    const token = await generarJWT(user.id, user.email);
+
+    res.status(200).json({
+      msg: "Login Ok!!!",
+      userDetails: {
+        username: user.username,
+        token: token,
+      },
+    });
+  } catch (e) {
+    res.status(500).send("Comuniquese con el administrador");
+  }
+};
+
+export const AllUsersHotels = async (req, res) => {
+  try {
+    const usersAll = await Users.find();
+    res.status(200).json(usersAll);
+  } catch (e) {
+    console.log("error interno", e);
+  }
 };

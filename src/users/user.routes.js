@@ -1,23 +1,25 @@
 import { Router } from "express";
-import {validarJWT} from '../middleware/validar-jws.js';
 import { check } from "express-validator";
-import { updateAccount, deleteAccount } from "./user.controller.js";
+import { getRoomsAndSalons, updateUser, deleteUser } from "./user.controller.js";
+import { rolValidate } from "../middleware/users-validations.js";
+import { validarJWT } from "../middleware/validar-jws.js";
+const routerUser = Router();
 
-const router = Router();
+routerUser.get("/roomsAndSalons", getRoomsAndSalons);
 
-router.put('/account', 
-    validarJWT,
+routerUser.put('/update', 
     [
-        check('email', 'The email is required').isEmail(),
-        check('username', 'The username is required').notEmpty(),
-        check('newPassword', 'New password is required').optional().isLength({ min: 6 }).withMessage('The password must be at least 6 characters long')
-    ],
-    updateAccount
-);
+        check("email", "Este no es un correo válido").isEmail(),
+        check("username", "El username es obligatorio").not().isEmpty(),
+        check("password", "El password es obligatorio").not().isEmpty(),
+        check("password", "El password debe de ser mayor a 6 caracteres").isLength({
+          min: 6,
+        }),
+        validarJWT, 
+        rolValidate
+    ], 
+    updateUser);
+    
+routerUser.delete('/delete', validarJWT, deleteUser)
 
-router.delete('/account', 
-    validarJWT,
-    deleteAccount
-);
-
-export default router;
+export default routerUser;

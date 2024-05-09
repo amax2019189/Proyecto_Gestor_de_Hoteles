@@ -10,8 +10,8 @@ import salonsRoutes from '../src/salons/salons.routes.js'
 import authRoutes from '../src/auth/auth.routes.js'
 import eventRoutes from '../src/events/event.routes.js'
 import hotelsRoutes from '../src/hotels/hotels.routes.js'
+import apiLimiter from '../src/middleware/validar-cant-peticiones.js'
 import userRoutes from '../src/users/user.routes.js'
-
 
 class Server{
     constructor(){
@@ -23,7 +23,6 @@ class Server{
         this.eventPath = '/hotelManagerApi/v1/event'
         this.hotelPath = '/hotelManagerApi/v1/hotel'
         this.userPath = '/hotelManagerApi/v1/user'
-        
         this.middleware()
         this.conectarDB()
         this.routes()
@@ -39,6 +38,7 @@ class Server{
         this.app.use(express.json())
         this.app.use(helmet())
         this.app.use(morgan('dev'))
+        this.app.use(apiLimiter)
     }
 
     routes(){
@@ -48,7 +48,6 @@ class Server{
         this.app.use(this.eventPath, eventRoutes)
         this.app.use(this.hotelPath, hotelsRoutes)
         this.app.use(this.userPath, userRoutes)
-        
     }
 
     listen(){

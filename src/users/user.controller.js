@@ -1,76 +1,75 @@
 import roomModel from "../rooms/room.model.js";
 import salonsModel from "../salons/salons.model.js";
-import User from "../users/user.model.js";
-import bcrypt from 'bcryptjs';
+import User from "./user.model.js";
 
 export const getRoomsAndSalons = async (req, res) => {
   try {
+    const { fechaHospedaje, personas } = req.body;
+
+    // Obtener todas las habitaciones y salones
     const rooms = await roomModel.find();
     const salons = await salonsModel.find();
 
-    res.status(200).json(rooms, salons);
+    const habitacionesDisponibles = rooms.filter((habitacion) => {
+      return (
+        habitacion.availability === "available" &&
+        habitacion.capacity >= personas &&
+        new Date(fechaHospedaje) >= habitacion.dateStart &&
+        new Date(fechaHospedaje) <= habitacion.dateEnd
+      );
+    });
+
+    const salonesDisponibles = salons.filter((salon) => {
+      return salon.stateSalon === true || false && salon.amount >= personas;
+    });
+
+    const respuesta = {
+      habitaciones: habitacionesDisponibles,
+      salones: salonesDisponibles,
+    };
+
+    res.status(200).json(respuesta);
   } catch (error) {
-    console.log("error when obtaining the data: ", error);
-    res.status(500).json({ error: "error interno del server" });
+    console.log("Error al obtener los datos: ", error);
+    res.status(500).json({ error: "Error interno del servidor" });
   }
 };
 
-export const updateAccount = async (req, res) => {
-  const userId = req.user.uid; 
-  const { email, username, newPassword } = req.body;
+export const updateUser = async (req, res) => {
+  const userId = req.user.uid;
+  const { email, username, password } = req.body;
 
   try {
-      const usuario = await User.findById(userId);
+    const user = await User.findByIdAndUpdate(userId, { email, username, password }, { new: true });
 
-      if (!usuario) {
-          return res.status(404).json({ msg: 'User not found' });
-      }
+    if (!user) {
+      return res.status(404).json({ msg: 'User not found' });
+    }
 
-      if (usuario.role !== 'ROL_USER' || usuario._id.toString() !== userId) {
-          return res.status(403).json({ msg: 'You do not have permission to perform this action' });
-      }
-
-      usuario.email = email;
-      usuario.username = username;
-
-      if (newPassword) {
-          const salt = await bcrypt.genSalt(10);
-          const hashedPassword = await bcrypt.hash(newPassword, salt);
-          usuario.password = hashedPassword;
-      }
-
-      await usuario.save();
-
-      res.json({ msg: 'Your account has been updated', usuario });
+    res.status(200).json({
+        msg: "Your account has been updated",
+        user
+    });
   } catch (error) {
-      console.error(error.message);
-      res.status(500).send('Server ERROR');
+    console.error(error);
+    res.status(500).json({ msg: 'Error del servidor' });
   }
 };
-  
-  
 
-  export const deleteAccount = async (req, res) => {
-    const userId = req.user.uid;
-  
-    try {
-        const usuario = await User.findById(userId);
-  
-        if (!usuario) {
-            return res.status(404).json({ msg: 'User not found' });
-        }
-  
-        if (usuario.role !== 'ROL_USER' || usuario._id.toString() !== userId) {
-            return res.status(403).json({ msg: 'You do not have permission to perform this action' });
-        }
-  
-        await User.deleteOne({ _id: userId });
-  
-        res.json({ msg: 'Your account has been deleted' });
-    } catch (error) {
-        console.error(error.message);
-        res.status(500).send('Server ERROR');
+export const deleteUser = async (req, res) => {
+  const userId = req.user.uid;
+
+  try {
+    const user = await User.findByIdAndDelete(userId);
+
+    if (!user) {
+      return res.status(404).json({ msg: 'User not found' });
     }
-  };
-  
+
+    res.json({ msg: 'UYour account has been deleted' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ msg: 'Error del servidor' });
+  }
+};
 
