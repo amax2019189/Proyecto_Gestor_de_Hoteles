@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import {
-    hotelsPost
+    hotelsPost, generateInvoice
 } from "./hotels.controller.js"
 
 const router = Router();
@@ -15,6 +15,11 @@ router.post(
         check("owner", "Owner's name is required"),
     ],
     hotelsPost
+)
+
+router.get(
+    "/:userId/:hotelId/factura", 
+    generateInvoice
 )
 
 export default router;
