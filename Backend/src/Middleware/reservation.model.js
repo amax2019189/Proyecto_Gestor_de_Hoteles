@@ -6,4 +6,32 @@ const ReservationSchema = new Schema({
     ref: 'User',
     required: true
   },
+  hotel: {
+    type: Schema.Types.ObjectId,
+    ref: 'Hotel',
+    required: true
+  },
+  room: {
+    type: Schema.Types.ObjectId,
+    ref: 'Room',
+    required: true
+  },
+  checkInDate: {
+    type: Date,
+    required: true
+  },
+  checkOutDate: {
+    type: Date,
+    required: true
+  },
+  services: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Service'
+  }],
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 });
+
+export default mongoose.model('Reservation', ReservationSchema);
