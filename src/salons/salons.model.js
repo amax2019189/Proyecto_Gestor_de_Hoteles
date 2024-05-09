@@ -12,6 +12,10 @@ const SalonsSchema = mongoose.Schema({
     eventType: {
         type: String,
         require: [true, "Event type is required to book"]
+    },
+    stateSalon: {
+        type: Boolean,
+        default: true
     }
 })
 

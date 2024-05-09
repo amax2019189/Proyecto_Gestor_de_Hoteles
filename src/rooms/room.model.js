@@ -34,7 +34,6 @@ const RoomSchema = mongoose.Schema({
   description: {
     type: String,
   },
-
   dateStart: {
     type: Date,
     required: true,

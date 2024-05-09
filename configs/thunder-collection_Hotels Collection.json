@@ -1,0 +1,91 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Hotels Collection",
+    "collectionId": "2f43ffc7-fdc0-43fc-b8df-416aebff58c7",
+    "dateExported": "2024-05-09T17:28:05.933Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "e4bc19c8-71d7-4545-89e6-e06723824794",
+            "colId": "2f43ffc7-fdc0-43fc-b8df-416aebff58c7",
+            "containerId": "",
+            "name": "AddRooms",
+            "url": "http://localhost:8080/hotelManagerApi/v1/rooms/createRoom",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-05-09T16:57:36.555Z",
+            "modified": "2024-05-09T17:26:32.044Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"roomName\": \"prueba\",\n    \"roomNumber\": \"021\",\n    \"hotel\": \"663affdd49c7948a68aa321e\",\n    \"availability\": \"available\",\n    \"type\": \"spa\",\n    \"capacity\": 10,\n    \"description\": \"un hotel pal rato\",\n    \"dateStart\": \"2024-08-05\",\n    \"dateEnd\": \"2024-08-10\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "38c64ccf-3932-42a9-bd28-678ce2f1bdff",
+            "colId": "2f43ffc7-fdc0-43fc-b8df-416aebff58c7",
+            "containerId": "",
+            "name": "AddHotels",
+            "url": "http://localhost:8080/hotelManagerApi/v1/hotel/createHotel",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-09T16:57:36.556Z",
+            "modified": "2024-05-09T17:26:40.665Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"hotelGigo\",\n    \"quantityRooms\": 40,\n    \"location\": \"españita plaza real\",\n    \"owner\": \"penaldo\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "1fa7c22f-efeb-4ea8-8e39-e6b98578edb1",
+            "colId": "2f43ffc7-fdc0-43fc-b8df-416aebff58c7",
+            "containerId": "",
+            "name": "getstadistichotel",
+            "url": "http://localhost:8080/hotelManagerApi/v1/hotel/hotelStatistics/663d00d65cc368e4f32e49b5",
+            "method": "GET",
+            "sortNum": 22500,
+            "created": "2024-05-09T17:25:15.649Z",
+            "modified": "2024-05-09T17:25:43.947Z",
+            "headers": []
+        },
+        {
+            "_id": "9f0d84c3-d8fd-4cec-a8bc-9616bbe40047",
+            "colId": "2f43ffc7-fdc0-43fc-b8df-416aebff58c7",
+            "containerId": "",
+            "name": "CreateReservation",
+            "url": "http://localhost:8080/hotelManagerApi/v1/hotel/createReservation",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2024-05-09T17:25:13.624Z",
+            "modified": "2024-05-09T17:27:10.172Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"hotelId\": \"663d00d65cc368e4f32e49b5\", \n  \"checkInDate\": \"2024-06-01\",\n  \"checkOutDate\": \"2024-06-05\",\n  \"guestName\": \"Alice Johnson\"\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "736bb6ed-3bab-4b2d-8a32-a00cf2bcec32",
+            "colId": "2f43ffc7-fdc0-43fc-b8df-416aebff58c7",
+            "containerId": "",
+            "name": "AddSalons",
+            "url": "http://localhost:8080/hotelManagerApi/v1/salons/createSalon",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-09T16:57:36.557Z",
+            "modified": "2024-05-09T17:27:35.345Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"Gigo´s\",\n    \"amount\": 10,\n    \"eventType\": \"Social\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "QOzmFkZ2vsiF1rGFPprO4g3QfzETGMAYZOJAI8vOPVxUq9sZE7Rej3QlkvpfBkq_7O50bncRJXCgbmkuwKaA7w"
+}

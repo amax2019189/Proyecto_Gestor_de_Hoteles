@@ -1,0 +1,28 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "List Hotel",
+    "collectionId": "fadc6494-716c-442c-bc15-a15a21c39284",
+    "dateExported": "2024-05-09T17:03:50.046Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "30115e3e-971e-459b-8619-bc632a7bbe5a",
+            "colId": "fadc6494-716c-442c-bc15-a15a21c39284",
+            "containerId": "",
+            "name": "listRoomsSalonsEtc",
+            "url": "http://localhost:8080/hotelManagerApi/v1/user/roomsAndSalons",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-09T16:56:30.814Z",
+            "modified": "2024-05-09T16:56:36.120Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"fechaHospedaje\": \"2024-02-07\",\n    \"personas\": 10\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "0KIPg3nxV6t3nCw94WDwV79qZb7eE23ns_KM02Y4kSVf7wxXnJIKHX9nCNsAH4P6po-OvjBv6ohVlJTuk40f0w"
+}
