@@ -1,11 +1,42 @@
 {
 	"info": {
-		"_postman_id": "f9a55554-380b-4319-ad14-96955d6e6447",
+		"_postman_id": "fd3a854a-16b8-45c3-9e7b-c9c54e59c0fb",
 		"name": "HotelsCollection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "34430314"
+		"_exporter_id": "34428139"
 	},
 	"item": [
+		{
+			"name": "AddSalons",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"prueba1\",\r\n    \"amount\": 200,\r\n    \"eventType\": \"prueba1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/hotelManagerApi/v1/salons/createSalon",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotelManagerApi",
+						"v1",
+						"salons",
+						"createSalon"
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "AddRooms",
 			"request": {
@@ -13,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"roomName\": \"prueba12\",\r\n    \"roomNumber\": \"021\",\r\n    \"hotel\": \"663affdd49c7948a68aa321e\",\r\n    \"availability\": \"available\",\r\n    \"type\": \"spa\",\r\n    \"capacity\": 10,\r\n    \"description\": \"un hotel pal rato\",\r\n    \"dateStart\": \"2024-08-05\",\r\n    \"dateEnd\": \"2024-08-10\"\r\n}",
+					"raw": "{\r\n    \"roomName\": \"prueba12\",\r\n    \"roomNumber\": \"021\",\r\n    \"hotel\": \"663c46c9f32541954b387b12\",\r\n    \"availability\": \"available\",\r\n    \"type\": \"spa\",\r\n    \"capacity\": 10,\r\n    \"description\": \"un hotel pal rato\",\r\n    \"dateStart\": \"2024-08-05\",\r\n    \"dateEnd\": \"2024-08-10\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -44,7 +75,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"hotelPenaldo\",\r\n    \"quantityRooms\": 40,\r\n    \"location\": \"españita plaza real\",\r\n    \"owner\": \"penaldo\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Sunset Hotel\",\r\n    \"quantityRooms\": 100,\r\n    \"location\": \"123 Beach Ave, Miami, FL\",\r\n    \"owner\": \"John Doe\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -69,13 +100,13 @@
 			"response": []
 		},
 		{
-			"name": "AddSalons",
+			"name": "CreateReservation",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"prueba1\",\r\n    \"amount\": 10,\r\n    \"eventType\": \"cocina\"\r\n}",
+					"raw": "{\r\n  \"hotelId\": \"663c46c9f32541954b387b12\", \r\n  \"checkInDate\": \"2024-06-01\",\r\n  \"checkOutDate\": \"2024-06-05\",\r\n  \"guestName\": \"Alice Johnson\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -83,7 +114,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/hotelManagerApi/v1/salons/createSalon",
+					"raw": "http://localhost:8080/hotelManagerApi/v1/hotel/createReservation",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -92,8 +123,31 @@
 					"path": [
 						"hotelManagerApi",
 						"v1",
-						"salons",
-						"createSalon"
+						"hotel",
+						"createReservation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getstadistichotel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/hotelManagerApi/v1/hotel/hotelStatistics/663c46c9f32541954b387b12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotelManagerApi",
+						"v1",
+						"hotel",
+						"hotelStatistics",
+						"663c46c9f32541954b387b12"
 					]
 				}
 			},
