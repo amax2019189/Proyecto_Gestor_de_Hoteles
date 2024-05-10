@@ -1,0 +1,118 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Hoteles",
+    "collectionId": "5a207945-bad0-4f49-bcc4-d44880a00354",
+    "dateExported": "2024-05-07T23:33:28.762Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "0e3d6def-ff8e-4ba9-81ef-e47244ae0210",
+            "name": "Rooms",
+            "containerId": "",
+            "created": "2024-05-03T00:12:34.962Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "c49e3947-f81d-4c31-9a09-278a7fdd48d3",
+            "name": "Users",
+            "containerId": "",
+            "created": "2024-05-07T02:01:27.270Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "bd265fa7-709b-4968-8248-4aed2cd0a3fd",
+            "name": "LOGIN",
+            "containerId": "",
+            "created": "2024-05-07T02:05:21.846Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "247ed755-0865-478d-8b50-e803eaab506f",
+            "colId": "5a207945-bad0-4f49-bcc4-d44880a00354",
+            "containerId": "0e3d6def-ff8e-4ba9-81ef-e47244ae0210",
+            "name": "POST Room",
+            "url": "",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-03T00:12:43.358Z",
+            "modified": "2024-05-03T00:12:43.358Z",
+            "headers": []
+        },
+        {
+            "_id": "7767f069-32bb-4c63-94ac-803b4af84c21",
+            "colId": "5a207945-bad0-4f49-bcc4-d44880a00354",
+            "containerId": "c49e3947-f81d-4c31-9a09-278a7fdd48d3",
+            "name": "PUT Account",
+            "url": "http://localhost:8080/hotelManagerApi/v1/user/account",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-05-07T02:01:34.455Z",
+            "modified": "2024-05-07T23:30:56.556Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NjNhYjk4YTZhMGFkNzllMTYxZTA4YjAiLCJpYXQiOjE3MTUxMjQ2MzQsImV4cCI6MTcxNzcxNjYzNH0.07riNCKdJXIoiFpgvvsfK5gvaW2UNHas0NHOCf4keUg"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"hnavas@gmail.com\",\n  \"username\": \"hnavas\",\n  \"newPassword\": \"1234567\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d5da6f33-6b6d-409b-8ead-c7c436d75e54",
+            "colId": "5a207945-bad0-4f49-bcc4-d44880a00354",
+            "containerId": "bd265fa7-709b-4968-8248-4aed2cd0a3fd",
+            "name": "Login",
+            "url": "http://localhost:8080/hotelManagerApi/v1/auth/login",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-05-07T02:05:28.474Z",
+            "modified": "2024-05-07T23:32:31.555Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"hnavas@gmail.com\",\n  \"password\": \"1234567\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "a79fa0e8-8ed2-4a62-b8c4-9eaf141b515f",
+            "colId": "5a207945-bad0-4f49-bcc4-d44880a00354",
+            "containerId": "bd265fa7-709b-4968-8248-4aed2cd0a3fd",
+            "name": "Register",
+            "url": "http://localhost:8080/hotelManagerApi/v1/auth/register",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-05-07T02:06:30.091Z",
+            "modified": "2024-05-07T23:28:52.112Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"jnavas@gmail.com\",\n  \"username\": \"jnavas\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "50fd85ad-f3f4-406f-b4a0-bf7698992518",
+            "colId": "5a207945-bad0-4f49-bcc4-d44880a00354",
+            "containerId": "c49e3947-f81d-4c31-9a09-278a7fdd48d3",
+            "name": "DELETE Account",
+            "url": "http://localhost:8080/hotelManagerApi/v1/user/account",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-05-07T03:43:52.676Z",
+            "modified": "2024-05-07T23:32:51.819Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NjNhYjk4YTZhMGFkNzllMTYxZTA4YjAiLCJpYXQiOjE3MTUxMjQ2MzQsImV4cCI6MTcxNzcxNjYzNH0.07riNCKdJXIoiFpgvvsfK5gvaW2UNHas0NHOCf4keUg"
+                }
+            ]
+        }
+    ],
+    "ref": "KWMidSYrqi6DBHQgRkv_bDn1HCJsXzdNX48Frea_UMYuX6nlGveRHybsp0gqA-wedZOfFgt1IDsYVvpnIMzJnw"
+}

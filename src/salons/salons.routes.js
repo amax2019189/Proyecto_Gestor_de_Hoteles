@@ -7,7 +7,7 @@ import {
 const router = Router();
 
 router.post(
-    "/",
+    "/createSalon",
     [
         check("name", "The name is necessary"),
         check("amount", "The quantity is necessary"),

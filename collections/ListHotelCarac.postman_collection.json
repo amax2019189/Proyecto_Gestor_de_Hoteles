@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "00c4c6dd-0f21-4017-b63b-7adc06140ac5",
+		"name": "ListHotelCarac",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34430314"
+	},
+	"item": [
+		{
+			"name": "listRoomsSalonsEtc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fechaHospedaje\": \"2024-02-07\",\r\n    \"personas\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/hotelManagerApi/v1/user/roomsAndSalons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hotelManagerApi",
+						"v1",
+						"user",
+						"roomsAndSalons"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

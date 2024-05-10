@@ -1,0 +1,45 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "hotelsSearch ",
+    "collectionId": "f7c2f347-520a-4d50-84ca-7fb1aa553f26",
+    "dateExported": "2024-05-10T16:52:45.069Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "791369cb-c7e9-448d-a467-9ddb8bae5f29",
+            "colId": "f7c2f347-520a-4d50-84ca-7fb1aa553f26",
+            "containerId": "",
+            "name": "searchHotels",
+            "url": "http://localhost:8080/hotelManagerApi/v1/hotel/searchHotels",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-09T17:23:35.369Z",
+            "modified": "2024-05-10T16:34:09.077Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"region\":\"Madrid\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "f766bd00-388a-49c4-9162-1060dfb15c63",
+            "colId": "f7c2f347-520a-4d50-84ca-7fb1aa553f26",
+            "containerId": "",
+            "name": "postHotels",
+            "url": "http://localhost:8080/hotelManagerApi/v1/hotel/createHotel",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-05-09T17:30:02.866Z",
+            "modified": "2024-05-10T16:30:24.573Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Electris\",\n  \"quantityRooms\":\"25\",\n  \"location\":\"Madrid\",\n  \"owner\":\"Nicolas Tesla\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "9Oqvbc-TFA66VuFtvyUSeIKkBDzMkL4IgIIAzYwxikpgDpMTBE8oODWb1t63gm29Gzn9z9m-yKpQZNHgis4Aig"
+}
