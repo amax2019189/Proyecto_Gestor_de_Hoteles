@@ -1,23 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import record from './record';
-import record from './record';
+import express from 'express';
+import ReservationController from './reservation.controller.js';
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <Switch>
-          <Route path="/historial">
-            <Historial />
-          </Route>
-          <Route path="/">
-            <Inicio />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
-}
+const router = express.Router();
 
-export default App;
+router.get('/historial', ReservationController.getReservations);
+
+export default router;
