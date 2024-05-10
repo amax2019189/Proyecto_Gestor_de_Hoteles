@@ -1,0 +1,23 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Admin Hotels",
+    "collectionId": "4aa58595-42d2-4c91-922b-d820ed851f6b",
+    "dateExported": "2024-05-10T16:21:52.335Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "43d5556b-8bc4-43ab-ade0-a86bdf52e866",
+            "colId": "4aa58595-42d2-4c91-922b-d820ed851f6b",
+            "containerId": "",
+            "name": "AllUsersList",
+            "url": "http://localhost:8080/hotelManagerApi/v1/user/roomsAndSalons",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-05-09T17:30:06.800Z",
+            "modified": "2024-05-09T17:32:02.078Z",
+            "headers": []
+        }
+    ],
+    "ref": "Rc-6jweNLDfaTV1XUVutCdXBHp-qHzg4o3wIzipMlPWmQeCo5Z3nxqTl3AJWutq_ajBAX6QsUY1R1Q-sDMfapw"
+}

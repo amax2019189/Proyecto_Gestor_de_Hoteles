@@ -1,0 +1,50 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Account User",
+    "collectionId": "2de64398-417b-4307-b789-915a28c06ab0",
+    "dateExported": "2024-05-10T16:22:03.071Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "acb91d5a-298b-464e-82ca-fb90e6dbc2fa",
+            "colId": "2de64398-417b-4307-b789-915a28c06ab0",
+            "containerId": "",
+            "name": "updateAccount",
+            "url": "http://localhost:8080/hotelManagerApi/v1/user/update",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2024-05-10T15:12:25.465Z",
+            "modified": "2024-05-10T15:13:39.140Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NjNjZmQwZjA0OWVkMTM4NTI0ZjYwMjIiLCJpYXQiOjE3MTUzNTQwMDQsImV4cCI6MTcxNzk0NjAwNH0.bYstEK5HHi0Rmc-hy7hRTkcGtugVd5y6dFCFL_ABxoE"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"email\": \"amax-2019189@kinal.edu.gt\",\n    \"username\": \"Max\",\n    \"password\": \"654321\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "0d2a07d3-6291-43ce-98d2-5e55584453b2",
+            "colId": "2de64398-417b-4307-b789-915a28c06ab0",
+            "containerId": "",
+            "name": "deleteAccount",
+            "url": "http://localhost:8080/hotelManagerApi/v1/user/delete",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2024-05-10T15:12:25.467Z",
+            "modified": "2024-05-10T15:17:36.189Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NjNlM2E2NTNiY2JmMmFkMWNjNmUwYjUiLCJpYXQiOjE3MTUzNTQyMzksImV4cCI6MTcxNzk0NjIzOX0.g_NBzTKACOm6CTHEo6jfQ7ZL0LEX7kqFSoRbSxiX2Jc"
+                }
+            ]
+        }
+    ],
+    "ref": "ysac_HGTbZFtNi9YqP_j-OPAPcH8vtqdg4_c-atLRQyeu8HejxBV8IN5JtTfGMlSKWCNdRRpDrflnLik4jMmHQ"
+}

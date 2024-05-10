@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import Hotel from "./hotels.model.js";
 
 const ReservationSchema = new mongoose.Schema({
     hotelId: {

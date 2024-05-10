@@ -1,21 +1,21 @@
 {
     "clientName": "Thunder Client",
-    "collectionName": "List Hotel",
-    "collectionId": "fadc6494-716c-442c-bc15-a15a21c39284",
-    "dateExported": "2024-05-10T16:21:43.239Z",
+    "collectionName": "List Hotel Carac",
+    "collectionId": "f97008e4-6b52-4347-8f70-f383bead6694",
+    "dateExported": "2024-05-10T16:21:56.678Z",
     "version": "1.2",
     "folders": [],
     "requests": [
         {
-            "_id": "30115e3e-971e-459b-8619-bc632a7bbe5a",
-            "colId": "fadc6494-716c-442c-bc15-a15a21c39284",
+            "_id": "6447c2da-d24a-4142-ae15-abe059f42d05",
+            "colId": "f97008e4-6b52-4347-8f70-f383bead6694",
             "containerId": "",
             "name": "listRoomsSalonsEtc",
             "url": "http://localhost:8080/hotelManagerApi/v1/user/roomsAndSalons",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2024-05-09T16:56:30.814Z",
-            "modified": "2024-05-09T16:56:36.120Z",
+            "created": "2024-05-10T15:11:45.685Z",
+            "modified": "2024-05-10T15:11:58.535Z",
             "headers": [],
             "body": {
                 "type": "json",
@@ -24,5 +24,5 @@
             }
         }
     ],
-    "ref": "0KIPg3nxV6t3nCw94WDwVz_iMq3wCO6HnGaEZAvSSUHc4q2zf2AtazouRDfUUFzMvv1oCT3zzr_ykB8Vt0otIg"
+    "ref": "18Lbo7PiDd5fk8vqbfpCfc3ESRTQL19T_znqSO_HFtU0MXxirqDnMvsrnwy-bwdeGKN9MHFLlBWzf3WHhs638Q"
 }
