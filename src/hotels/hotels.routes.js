@@ -3,7 +3,9 @@ import { check } from "express-validator";
 import {
     hotelsPost,
     createReservation,
-    getHotelStatistics
+    getHotelStatistics,
+    searchHotels,
+    reservationsbyhotel
 } from "./hotels.controller.js";
 const router = Router();
 
@@ -34,6 +36,17 @@ router.get(
         check("hotelId", "Valid hotel ID is required").isMongoId()
     ],
     getHotelStatistics
+);
+// routes searchHotels
+router.get("/searchHotels",  searchHotels 
+);
+// routes reservationsbyhotel
+router.get(
+    "/reservationsbyhotel/:hotelId",
+    [
+        check("hotelId", "Valid hotel ID is required").isMongoId()
+    ],
+    reservationsbyhotel
 );
 
 export default router;

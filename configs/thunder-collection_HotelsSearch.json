@@ -1,0 +1,74 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "HotelsSearch",
+    "collectionId": "3d3340e1-5588-444b-8526-4b621f294391",
+    "dateExported": "2024-05-13T00:24:50.546Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "553ba1f4-1fae-4ed8-b62e-ce3a26ca58f9",
+            "colId": "3d3340e1-5588-444b-8526-4b621f294391",
+            "containerId": "",
+            "name": "createHotel",
+            "url": "http://localhost:8080/hotelManagerApi/v1/hotel/createHotel",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-05-10T03:52:09.053Z",
+            "modified": "2024-05-10T21:16:25.595Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"The Kings\",\n  \"quantityRooms\":\"65\",\n  \"location\":\"Madrid\",\n  \"owner\":\"Pep Guardiola\"\n  \n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "45b0e0c1-f22e-492c-b612-dbf62e50a81e",
+            "colId": "3d3340e1-5588-444b-8526-4b621f294391",
+            "containerId": "",
+            "name": "HotelsSearch",
+            "url": "http://localhost:8080/hotelManagerApi/v1/hotel/searchHotels",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-05-10T03:52:09.054Z",
+            "modified": "2024-05-13T00:15:57.859Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n     \"region\": \"Madrid\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "eb86d2e8-70cc-43ae-a61d-9047b922e1eb",
+            "colId": "3d3340e1-5588-444b-8526-4b621f294391",
+            "containerId": "",
+            "name": "createReserve",
+            "url": "http://localhost:8080/hotelManagerApi/v1/hotel/createReservation",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-05-12T13:13:54.595Z",
+            "modified": "2024-05-12T21:15:43.233Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n  \"hotelId\": \"663e8ed120a3c5f9de976ef7\",\r\n    \"checkInDate\": \"2024-04-21\",\r\n    \"checkOutDate\": \"2024-06-05\",\r\n    \"guestName\": \"Jose\"\r\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "393e8c95-ff4d-448c-8ec8-8c26d8972e54",
+            "colId": "3d3340e1-5588-444b-8526-4b621f294391",
+            "containerId": "",
+            "name": "getReserveHotels",
+            "url": "http://localhost:8080/hotelManagerApi/v1/hotel/allReservations/663e8ed120a3c5f9de976ef7",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-05-12T21:13:28.739Z",
+            "modified": "2024-05-12T21:15:49.611Z",
+            "headers": []
+        }
+    ],
+    "ref": "-P9j01_K_nQ1WiRYuyrNYt95lpN3hDnqVYqknFRxYmNEYoL1I9eA7ixc7L5afQqzdJpnRfV65iFIOL73xl_riQ"
+}
